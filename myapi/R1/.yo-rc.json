@@ -1,0 +1,142 @@
+{
+  "generator-cedrus-api": {
+    "haveConfigFile": true,
+    "discover": {
+      "ask": false,
+      "apiConsumes": [
+        "application/json"
+      ],
+      "apiProduces": [
+        "application/json"
+      ]
+    },
+    "detail": {
+      "ask": false,
+      "isPublic": true,
+      "httpMethods": [
+        "get",
+        "post"
+      ],
+      "httpStatusCodes": [
+        "204",
+        "404",
+        "500"
+      ],
+      "versioning": {
+        "enabled": true,
+        "type": "uri",
+        "versionNumber": [
+          "v1"
+        ],
+        "uriOrder": "resourceFirst",
+        "contentTypeOrder": "resourceFirst",
+        "customHeaderName": "resourceFirst"
+      },
+      "apiData": {
+        "returnDataType": "Test Data"
+      },
+      "records": {
+        "limit": "20"
+      },
+      "cache": {
+        "RedisEnable": false,
+        "RedisHost": "pub-redis-19334.dal-05.1.sl.garantiadata.com",
+        "RedisPort": "19334",
+        "RedisPassword": "zKvyYzznhsdvYwgq",
+        "RedisExpire": 180
+      },
+      "pagination": {
+        "PaginationEnable": true
+      },
+      "filter": {
+        "FilterEnable": false
+      }
+    },
+    "deploy": {
+      "ask": false,
+      "apiApplicationType": "nodejs",
+      "openWhisk": {
+        "OpenWhiskEnable": false
+      },
+      "tls": {
+        "TLSEnable": false
+      },
+      "cloudFoundry": {
+        "appName": "app",
+        "appMemory": "256M"
+      }
+    },
+    "apiOverview": {
+      "apiName": "myapi",
+      "apiBasePath": "/myapi",
+      "apiDescription": "my first api"
+    },
+    "dataInput": {
+      "dataInputType": "JSON Input"
+    },
+    "JSONExtraction": [
+      {
+        "resourceName": "Customer",
+        "jsonFilePath": "{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"}},\"required\":[\"name\"]}",
+        "jsonSchema": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ]
+        },
+        "isPublic": true,
+        "httpMethods": [
+          "get",
+          "post"
+        ],
+        "httpStatusCodes": [
+          "204",
+          "404",
+          "500"
+        ],
+        "requireTestDataType": "Test Data",
+        "apiFakerMappingFileProvided": false,
+        "recordsLimit": "20",
+        "requireQuery": false
+      },
+      {
+        "resourceName": "Customer",
+        "jsonFilePath": "{\"type\":\"object\",\"properties\":{\"type\":{},\"properties\":{\"type\":{}},\"required\":{}},\"required\":[\"type\",\"properties\",\"required\"]}",
+        "jsonSchema": {
+          "type": "object",
+          "properties": {
+            "type": {},
+            "properties": {
+              "type": {}
+            },
+            "required": {}
+          },
+          "required": [
+            "type",
+            "properties",
+            "required"
+          ]
+        },
+        "isPublic": true,
+        "httpMethods": [
+          "get",
+          "post"
+        ],
+        "httpStatusCodes": [
+          "204",
+          "404",
+          "500"
+        ],
+        "requireTestDataType": "Test Data",
+        "apiFakerMappingFileProvided": false,
+        "recordsLimit": "20",
+        "requireQuery": false
+      }
+    ]
+  }
+}
